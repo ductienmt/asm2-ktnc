@@ -2,9 +2,10 @@
 <suite name="TestOpenWeb" parallel="false">
 	<test name="TestOpenWeb">
 		<classes>
-			<class name="com.asm2_ktnc.NewTest">
+			<class name="com.asm2_ktnc.NewTest1">
 				<methods>
 					<include name="openWeb" />
+					<include name="fillUsername"></include>
 				</methods>
 			</class>
 		</classes>

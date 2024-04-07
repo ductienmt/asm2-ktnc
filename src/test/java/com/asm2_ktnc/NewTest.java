@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.time.Duration;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -26,11 +27,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NewTest {
 	public WebDriver driver;
@@ -40,20 +44,45 @@ public class NewTest {
 	HSSFWorkbook workbook;
 	HSSFSheet worksheet;
 	Map<String, Object[]> TestNGResults;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-	@Test(description = "Opens the TestNG Demo Website for login Test", priority = 1)
+	@Test(description = "Opens web", priority = 1)
 	public void openWeb() throws Exception{
 		try {
 			driver.get("https://ap.poly.edu.vn/login");
 //			driver.manage().window().maximize();
+			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='Widget containing a Cloudflare security challenge']")));
+	        driver.findElement(By.cssSelector("input[type='checkbox']")).click();
 
-			
 			TestNGResults.put("2", new Object[] { 1d, "Open web AP", "Site gets opened", "Passed" });
 		} catch (Exception e) {
 			TestNGResults.put("2", new Object[] { 1d, "Open web AP", "Site gets opened", "Failed" });
 			AssertJUnit.assertTrue(false);
 		}
 	}
+	
+	@Test(description = "Click login by mail fpt", priority = 2)
+	public void clickLogin() throws Exception{
+		try {
+			Thread.sleep(5000);
+			 // Nhấp vào nút "Login with @fpt.edu.vn" để mở dropdown
+	        WebElement loginButton = driver.findElement(By.xpath("//button[contains(.,'Login with @fpt.edu.vn')]"));
+	        loginButton.click();
+	        
+	        // Chờ đến khi dropdown được mở ra
+	        WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("loginDropDown")));
+	        
+	        WebElement caoDangButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[span[contains(text(),'Cao đẳng')]]")));
+	        caoDangButton.click();
+	        TestNGResults.put("3", new Object[] { 1d, "Click login button", "click", "Passed" });
+		} catch (Exception e) {
+			// TODO: handle exception
+			TestNGResults.put("3", new Object[] { 1d, "Click login button", "click", "Failed" });
+			AssertJUnit.assertTrue(false);
+		}
+	}
+	
+
 	
 	
 	
@@ -72,13 +101,13 @@ public class NewTest {
 	        // Lấy địa chỉ làm việc hiện tại và tải dữ liệu vào file
 	        workingDir = System.getProperty("user.dir");
 //	      
-	        WebDriverManager.chromedriver().setup();
+//	        WebDriverManager.chromedriver().setup();
 	        
-	        ChromeOptions options = new ChromeOptions();
-	        options.addArguments("--user-data-dir=C:\\Users\\ducti\\AppData\\Local\\Google\\Chrome\\User Data");
-	        options.addArguments("--profile-directory=Profile 3");
+//	        ChromeOptions options = new ChromeOptions();
+//	        options.addArguments("user-data-dir=C:\\Users\\ducti\\AppData\\Local\\Google\\Chrome\\User Data");
+//	        options.addArguments("profile-directory=Profile 4");
 //	        options.addExtensions(new File("D:\\New folder\\asm2-ktnc\\myfpl.crx"));
-	        driver = new ChromeDriver(options);
+	        driver = new FirefoxDriver();
 	        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // No Such Element Exception
 	    } catch (Exception e) {
 	        throw new IllegalStateException("Can't start the Chrome web driver", e);

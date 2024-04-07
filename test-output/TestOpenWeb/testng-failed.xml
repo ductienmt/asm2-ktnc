@@ -3,13 +3,12 @@
 <suite name="Failed suite [TestOpenWeb]">
   <test thread-count="5" name="TestOpenWeb(failed)">
     <classes>
-      <class name="com.asm2_ktnc.NewTest">
+      <class name="com.asm2_ktnc.NewTest1">
         <methods>
           <include name="suiteTearDown"/>
-          <include name="fillPass"/>
-          <include name="suiteSetup"/>
+          <include name="openWeb"/>
         </methods>
-      </class> <!-- com.asm2_ktnc.NewTest -->
+      </class> <!-- com.asm2_ktnc.NewTest1 -->
     </classes>
   </test> <!-- TestOpenWeb(failed) -->
 </suite> <!-- Failed suite [TestOpenWeb] -->
