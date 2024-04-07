@@ -44,7 +44,7 @@ public class NewTest {
 	HSSFWorkbook workbook;
 	HSSFSheet worksheet;
 	Map<String, Object[]> TestNGResults;
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 	@Test(description = "Opens web", priority = 1)
 	public void openWeb() throws Exception{
@@ -65,19 +65,63 @@ public class NewTest {
 	public void clickLogin() throws Exception{
 		try {
 			Thread.sleep(5000);
-			 // Nhấp vào nút "Login with @fpt.edu.vn" để mở dropdown
-	        WebElement loginButton = driver.findElement(By.xpath("//button[contains(.,'Login with @fpt.edu.vn')]"));
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(span, 'Login with @fpt.edu.vn')]")));
+
+	        // Nhấp vào nút "Login with @fpt.edu.vn"
+	        WebElement loginButton = driver.findElement(By.xpath("//button[contains(span, 'Login with @fpt.edu.vn')]"));
 	        loginButton.click();
-	        
-	        // Chờ đến khi dropdown được mở ra
-	        WebElement dropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("loginDropDown")));
-	        
-	        WebElement caoDangButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[span[contains(text(),'Cao đẳng')]]")));
+
+	        // Chờ cho dropdown xuất hiện
+//	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("loginDropDown")));
+//	        System.out.println("tìm thấy");
+	        Thread.sleep(2000);
+
+	        // Nhấp vào nút "Cao đẳng" trong dropdown
+	        WebElement caoDangButton = driver.findElement(By.xpath("//button[contains(span, 'Cao đẳng')]"));
 	        caoDangButton.click();
-	        TestNGResults.put("3", new Object[] { 1d, "Click login button", "click", "Passed" });
+//	        System.out.println("đã click");
+	        
+	        
+	        TestNGResults.put("3", new Object[] { 2d, "Click login button", "click", "Passed" });
 		} catch (Exception e) {
 			// TODO: handle exception
-			TestNGResults.put("3", new Object[] { 1d, "Click login button", "click", "Failed" });
+			TestNGResults.put("3", new Object[] { 2d, "Click login button", "click", "Failed" });
+			AssertJUnit.assertTrue(false);
+		}
+	}
+	
+	@Test(description = "Fill username", priority = 3)
+	public void fillUsername() throws Exception{
+		try {
+			Thread.sleep(2000);
+			WebElement username = driver.findElement(By.name("identifier"));
+			username.sendKeys("tiendtdps32039@fpt.edu.vn");
+			Thread.sleep(1000);
+			WebElement button = driver.findElement(By.xpath("//span[text()='Tiếp theo']"));
+			button.click();
+			
+			TestNGResults.put("4", new Object[] { 3d, "Click login username", "click", "Passed" });
+		} catch (Exception e) {
+			// TODO: handle exception
+			TestNGResults.put("4", new Object[] { 3d, "Click login username", "click", "Failed" });
+			AssertJUnit.assertTrue(false);
+		}
+	}
+	
+	@Test(description = "Fill pass", priority = 4)
+	public void fillPass() throws Exception{
+		try {
+			Thread.sleep(2000);
+			WebElement pass = driver.findElement(By.name("Passwd"));
+			pass.sendKeys("1730310522Tien");
+			Thread.sleep(1000);
+			WebElement button = driver.findElement(By.xpath("//span[text()='Tiếp theo']"));
+			button.click();
+			
+			TestNGResults.put("5", new Object[] { 4d, "Click login pass", "click", "Passed" });
+		} catch (Exception e) {
+			// TODO: handle exception
+			TestNGResults.put("5", new Object[] { 4d, "Click login pass", "click", "Failed" });
 			AssertJUnit.assertTrue(false);
 		}
 	}

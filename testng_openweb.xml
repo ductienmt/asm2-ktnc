@@ -5,7 +5,9 @@
 			<class name="com.asm2_ktnc.NewTest1">
 				<methods>
 					<include name="openWeb" />
-					<include name="fillUsername"></include>
+					<include name="clickLogin" />
+					<include name="fillUsername" />
+					<include name="fillPass" />
 				</methods>
 			</class>
 		</classes>
