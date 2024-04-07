@@ -95,7 +95,7 @@ public class NewTest {
 		try {
 			Thread.sleep(2000);
 			WebElement username = driver.findElement(By.name("identifier"));
-			username.sendKeys("tiendtdps32039@fpt.edu.vn");
+			username.sendKeys("");
 			Thread.sleep(1000);
 			WebElement button = driver.findElement(By.xpath("//span[text()='Tiếp theo']"));
 			button.click();
@@ -113,7 +113,7 @@ public class NewTest {
 		try {
 			Thread.sleep(2000);
 			WebElement pass = driver.findElement(By.name("Passwd"));
-			pass.sendKeys("1730310522Tien");
+			pass.sendKeys("");
 			Thread.sleep(1000);
 			WebElement button = driver.findElement(By.xpath("//span[text()='Tiếp theo']"));
 			button.click();
