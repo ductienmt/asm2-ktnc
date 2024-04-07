@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestOpenWeb]">
+  <test thread-count="5" name="TestOpenWeb(failed)">
+    <classes>
+      <class name="com.asm2_ktnc.NewTest">
+        <methods>
+          <include name="suiteTearDown"/>
+          <include name="fillPass"/>
+          <include name="suiteSetup"/>
+        </methods>
+      </class> <!-- com.asm2_ktnc.NewTest -->
+    </classes>
+  </test> <!-- TestOpenWeb(failed) -->
+</suite> <!-- Failed suite [TestOpenWeb] -->

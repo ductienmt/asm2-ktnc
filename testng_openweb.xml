@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestOpenWeb" parallel="false">
+	<test name="TestOpenWeb">
+		<classes>
+			<class name="com.asm2_ktnc.NewTest">
+				<methods>
+					<include name="openWeb" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Test -->
+</suite>
+<!-- Suite -->
