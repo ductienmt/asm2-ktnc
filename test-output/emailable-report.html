@@ -8,45 +8,18 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">21,010</td><td></td><td></td></tr>
+<tr><th colspan="8">TestOpenWeb</th></tr>
+<tr><td><a href="#t0">TestOpenWeb</a></td><td class="num">4</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">81,309</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.asm2_ktnc.NewTest</td><td><a href="#m0">openWeb</a></td><td rowspan="1">1712498821407</td><td rowspan="1">2626</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.asm2_ktnc.NewTest</td><td><a href="#m1">clickLogin</a></td><td rowspan="1">1712498824038</td><td rowspan="1">9151</td></tr><tr class="passedeven"><td><a href="#m2">fillPass</a></td><td rowspan="1">1712498836537</td><td rowspan="1">3276</td></tr><tr class="passedeven"><td><a href="#m3">fillUsername</a></td><td rowspan="1">1712498833191</td><td rowspan="1">3344</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestOpenWeb</th></tr></tbody><tbody id="t0"><tr><th colspan="4">TestOpenWeb &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.asm2_ktnc.NewTest2</td><td><a href="#m0">clickLogin</a></td><td rowspan="1">1712588592084</td><td rowspan="1">7</td></tr><tr><th colspan="4">TestOpenWeb &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">com.asm2_ktnc.NewTest2</td><td><a href="#m1">fillPass</a></td><td rowspan="1">1712588527195</td><td rowspan="1">3208</td></tr><tr class="passedeven"><td><a href="#m2">fillUsername</a></td><td rowspan="1">1712588523390</td><td rowspan="1">3803</td></tr><tr class="passedeven"><td><a href="#m3">openAP</a></td><td rowspan="1">1712588530405</td><td rowspan="1">61677</td></tr><tr class="passedeven"><td><a href="#m4">openGmail</a></td><td rowspan="1">1712588512693</td><td rowspan="1">10692</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.asm2_ktnc.NewTest#openWeb</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.asm2_ktnc.NewTest.openWeb(NewTest.java:60)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+<h2>TestOpenWeb</h2><h3 id="m0">com.asm2_ktnc.NewTest2#clickLogin</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 
+	at com.asm2_ktnc.NewTest2.clickLogin(NewTest2.java:217)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:819)
-	at org.testng.TestRunner.run(TestRunner.java:619)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-	at org.testng.TestNG.runSuites(TestNG.java:1134)
-	at org.testng.TestNG.run(TestNG.java:1101)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.asm2_ktnc.NewTest#clickLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.asm2_ktnc.NewTest#fillPass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.asm2_ktnc.NewTest#fillUsername</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.asm2_ktnc.NewTest2#fillPass</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.asm2_ktnc.NewTest2#fillUsername</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.asm2_ktnc.NewTest2#openAP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.asm2_ktnc.NewTest2#openGmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

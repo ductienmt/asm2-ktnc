@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.asm2_ktnc.NewTest">
+      <class name="com.asm2_ktnc.NewTest2">
         <methods>
-          <include name="suiteTearDown"/>
-          <include name="openWeb"/>
+          <include name="clickLogin"/>
           <include name="suiteSetup"/>
+          <include name="suiteTearDown"/>
         </methods>
-      </class> <!-- com.asm2_ktnc.NewTest -->
+      </class> <!-- com.asm2_ktnc.NewTest2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

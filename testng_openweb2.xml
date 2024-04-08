@@ -2,12 +2,13 @@
 <suite name="TestOpenWeb" parallel="false">
 	<test name="TestOpenWeb">
 		<classes>
-			<class name="com.asm2_ktnc.NewTest">
+			<class name="com.asm2_ktnc.NewTest2">
 				<methods>
-					<include name="openWeb" />
-					<include name="clickLogin" />
+					<include name="openGmail" />
 					<include name="fillUsername" />
 					<include name="fillPass" />
+					<include name="openAP" />
+					<include name="clickLogin" />
 				</methods>
 			</class>
 		</classes>

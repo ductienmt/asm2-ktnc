@@ -28,6 +28,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.AssertJUnit;
@@ -49,10 +50,11 @@ public class NewTest {
 	@Test(description = "Opens web", priority = 1)
 	public void openWeb() throws Exception{
 		try {
+			Thread.sleep(5000);
 			driver.get("https://ap.poly.edu.vn/login");
 //			driver.manage().window().maximize();
-			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='Widget containing a Cloudflare security challenge']")));
-	        driver.findElement(By.cssSelector("input[type='checkbox']")).click();
+//			driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@title='Widget containing a Cloudflare security challenge']")));
+//	        driver.findElement(By.cssSelector("input[type='checkbox']")).click();
 
 			TestNGResults.put("2", new Object[] { 1d, "Open web AP", "Site gets opened", "Passed" });
 		} catch (Exception e) {
@@ -146,12 +148,14 @@ public class NewTest {
 	        workingDir = System.getProperty("user.dir");
 //	      
 //	        WebDriverManager.chromedriver().setup();
-	        
+//	        FirefoxOptions options = new FirefoxOptions();
+//	        options.add
 //	        ChromeOptions options = new ChromeOptions();
 //	        options.addArguments("user-data-dir=C:\\Users\\ducti\\AppData\\Local\\Google\\Chrome\\User Data");
 //	        options.addArguments("profile-directory=Profile 4");
-//	        options.addExtensions(new File("D:\\New folder\\asm2-ktnc\\myfpl.crx"));
+//	        options.addExtensions(new File("D:\\New folder\\asm2-ktnc\\asm2-ktnc\\My-Fpoly-Extension.crx"));
 	        driver = new FirefoxDriver();
+//	        driver = new ChromeDriver(options);
 	        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // No Such Element Exception
 	    } catch (Exception e) {
 	        throw new IllegalStateException("Can't start the Chrome web driver", e);
@@ -181,7 +185,7 @@ public class NewTest {
 				}
 			}
 			try {
-				FileOutputStream out = new FileOutputStream(new File("TestToExel.xls"));
+				FileOutputStream out = new FileOutputStream(new File("TestToExcel1.xls"));
 				workbook.write(out);
 				out.close();
 				System.out.println("Successfully save Selenium Webdriver TestNG result to Excel File!!!");
