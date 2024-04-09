@@ -27,6 +27,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -46,36 +48,37 @@ public class NewTest2 {
 	HSSFSheet worksheet;
 	Map<String, Object[]> TestNGResults;
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	
-	
+
 	@SuppressWarnings("deprecation")
 	@BeforeClass(alwaysRun = true)
 	public void suiteSetup() {
-	    workbook = new HSSFWorkbook();
-	    worksheet = workbook.createSheet("TestNG Result Summary");
-	    TestNGResults = new LinkedHashMap<String, Object[]>();
-	    // Thêm test result vào file excel ở cột header
-	    TestNGResults.put("1", new Object[] { "Test Step No.", "Action", "Expected Output", "Actual Output" });
-	    try {
-	        // Lấy địa chỉ làm việc hiện tại và tải dữ liệu vào file
-	        workingDir = System.getProperty("user.dir");
+		workbook = new HSSFWorkbook();
+		worksheet = workbook.createSheet("TestNG Result Summary");
+		TestNGResults = new LinkedHashMap<String, Object[]>();
+		// Thêm test result vào file excel ở cột header
+		TestNGResults.put("1", new Object[] { "Test Step No.", "Action", "Expected Output", "Actual Output" });
+		try {
+			// Lấy địa chỉ làm việc hiện tại và tải dữ liệu vào file
+			workingDir = System.getProperty("user.dir");
 //	      
-	        WebDriverManager.chromedriver().setup();
+//			WebDriverManager.chromedriver().setup();
 //	        FirefoxOptions options = new FirefoxOptions();
 //	        options.add
-	        ChromeOptions options = new ChromeOptions();
+//			ChromeOptions options = new ChromeOptions();
 //	        options.addArguments("user-data-dir=C:\\Users\\ducti\\AppData\\Local\\Google\\Chrome\\User Data");
 //	        options.addArguments("profile-directory=Profile 4");
-	        options.addExtensions(new File("D:\\New folder\\asm2-ktnc\\asm2-ktnc\\My-Fpoly-Extension.crx"));
+//			options.addExtensions(new File("D:\\New folder\\asm2-ktnc\\asm2-ktnc\\My-Fpoly-Extension.crx"));
 //	        driver = new FirefoxDriver();
-	        driver = new ChromeDriver(options);
-	        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // No Such Element Exception
-	    } catch (Exception e) {
-	        throw new IllegalStateException("Can't start the Chrome web driver", e);
-	    }
+//			driver = new ChromeDriver(options);
+			ChromeOptions options = new ChromeOptions();
+			options.addExtensions(new File("D:\\New folder\\asm2-ktnc\\asm2-ktnc\\My-Fpoly-Extension.crx"));
+			driver = new ChromeDriver(options);
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // No Such Element Exception
+		} catch (Exception e) {
+			throw new IllegalStateException("Can't start the Chrome web driver", e);
+		}
 
 	}
-
 
 	@AfterClass
 	public void suiteTearDown() {
@@ -109,91 +112,118 @@ public class NewTest2 {
 //		driver.close();
 //		driver.quit();
 	}
-	
-	
+
 	@Test(description = "Open Gmail", priority = 1)
-	public void openGmail() throws Exception{
+	public void openGmail() throws Exception {
 		try {
 			driver.manage().window().maximize();
 			Thread.sleep(2000);
 			driver.get("https://www.google.com/intl/vi/gmail/about/");
 			Thread.sleep(2000);
-			WebElement button = driver.findElement(By.cssSelector("a.button--medium[data-action='sign in'][data-label='header']"));
+			WebElement button = driver
+					.findElement(By.cssSelector("a.button--medium[data-action='sign in'][data-label='header']"));
 			button.click();
+			TestNGResults.put("2", new Object[] { 2d, "Open gmail", "open", "Passed" });
 		} catch (Exception e) {
+			TestNGResults.put("2", new Object[] { 2d, "Open gmail", "open", "Failed" });
+			AssertJUnit.assertTrue(false);
 			// TODO: handle exception
 		}
 	}
-	
+
 	@Test(description = "Fill username", priority = 2)
-	public void fillUsername() throws Exception{
+	public void fillUsername() throws Exception {
 		try {
 			Thread.sleep(2000);
 			WebElement username = driver.findElement(By.name("identifier"));
-			username.sendKeys("namhhps31884@fpt.edu.vn");
+			username.sendKeys("nhuthmps32162@fpt.edu.vn");
 			Thread.sleep(1000);
 			WebElement button = driver.findElement(By.xpath("//span[text()='Next']"));
 			button.click();
-			
-			TestNGResults.put("4", new Object[] { 3d, "Click login username", "click", "Passed" });
+
+			TestNGResults.put("3", new Object[] { 3d, "Click login username", "click", "Passed" });
 		} catch (Exception e) {
 			// TODO: handle exception
-			TestNGResults.put("4", new Object[] { 3d, "Click login username", "click", "Failed" });
+			TestNGResults.put("3", new Object[] { 3d, "Click login username", "click", "Failed" });
 			AssertJUnit.assertTrue(false);
 		}
 	}
-	
+
 	@Test(description = "Fill pass", priority = 3)
-	public void fillPass() throws Exception{
+	public void fillPass() throws Exception {
 		try {
 			Thread.sleep(2000);
 			WebElement pass = driver.findElement(By.name("Passwd"));
-			pass.sendKeys("HuynhHaoNam1204@");
+			pass.sendKeys("hominhnhut123");
 			Thread.sleep(1000);
 			WebElement button = driver.findElement(By.xpath("//span[text()='Next']"));
 			button.click();
-			
-			
-			TestNGResults.put("5", new Object[] { 4d, "Click login pass", "click", "Passed" });
+
+			TestNGResults.put("4", new Object[] { 4d, "Click login pass", "click", "Passed" });
 		} catch (Exception e) {
 			// TODO: handle exception
-			TestNGResults.put("5", new Object[] { 4d, "Click login pass", "click", "Failed" });
+			TestNGResults.put("4", new Object[] { 4d, "Click login pass", "click", "Failed" });
 			AssertJUnit.assertTrue(false);
 		}
 	}
-	
-	@Test(description = "openAP", priority = 4)
-		public void openAP() throws Exception{
+
+	@Test(description = "open chrome extension", priority = 4)
+	public void openAP() throws Exception {
 		boolean flag = true;
 		try {
 			Thread.sleep(20000);
 			while (true) {
-                // Lấy địa chỉ web hiện tại
-                String currentUrl = driver.getCurrentUrl();
-                System.out.println("Current URL: " + currentUrl);
+				// Lấy địa chỉ web hiện tại
+				String currentUrl = driver.getCurrentUrl();
+				System.out.println("Current URL: " + currentUrl);
 
-                // So sánh với địa chỉ web cho trước
-                if (currentUrl.equals("https://mail.google.com/mail/u/0/#inbox")) {
-                	flag = false;
-                    // Mở tab mới và truy cập vào link ap.poly.edu.vn/login
-                    ((ChromeDriver) driver).executeScript("window.open('https://ap.poly.edu.vn/login','_blank');");
-                    break;
-                } else {
-                    // Trở về và đợi 2s
-                    flag = true;
-                    Thread.sleep(2000);
-                }
-            }
+				// So sánh với địa chỉ web cho trước
+				if (currentUrl.equals("https://mail.google.com/mail/u/0/#inbox")) {
+					flag = false;
+//					String url = "chrome://extensions";
+//					driver.get(url);
+//					Actions action = new Actions(driver);
+//					WebElement toggle = driver.findElement(By.className("circle toggle-ink"));
+//					action.moveToElement(toggle);
+//					action.click();
+//					action.perform();
+					String originalHandle = driver.getWindowHandle();
+					// Mở tab mới và truy cập vào link ap.poly.edu.vn/login
+					((ChromeDriver) driver).executeScript("window.open('https://ap.poly.edu.vn/login','_blank');");
+					Thread.sleep(2000);
+					for (String handle : driver.getWindowHandles()) {
+						if (!handle.equals(originalHandle)) {
+							driver.switchTo().window(handle);
+							break;
+						}
+					}
+					break;
+				} else {
+					// Trở về và đợi 2s
+					flag = true;
+					Thread.sleep(2000);
+				}
+			}
+			TestNGResults.put("5", new Object[] { 5d, "Open chrome extension", "click", "Passed" });
 		} catch (Exception e) {
+			TestNGResults.put("5", new Object[] { 5d, "Open chrome extension", "click", "Failed" });
+			AssertJUnit.assertTrue(false);
 			// TODO: handle exception
 		}
 	}
-	
-	@Test(description = "Click login by mail fpt", priority = 5)
+
+	@Test(description = "open ap and Click login by mail fpt", priority = 5)
 	public void clickLogin() throws Exception{
 		try {
-//			Thread.sleep(10000);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(span, 'Login with @fpt.edu.vn')]")));
+//			driver.get("https://ap.poly.edu.vn/login");
+			
+			
+			
+
+			
+
+//			Thread.sleep(60000);
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(span, 'Login with @fpt.edu.vn')]")));
 
 	        // Nhấp vào nút "Login with @fpt.edu.vn"
 	        WebElement loginButton = driver.findElement(By.xpath("//button[contains(span, 'Login with @fpt.edu.vn')]"));
@@ -210,14 +240,17 @@ public class NewTest2 {
 //	        System.out.println("đã click");
 	        
 	        
-	        TestNGResults.put("3", new Object[] { 2d, "Click login button", "click", "Passed" });
+	        TestNGResults.put("6", new Object[] { 6d, "Click login button", "click", "Passed" });
 		} catch (Exception e) {
 			// TODO: handle exception
-			TestNGResults.put("3", new Object[] { 2d, "Click login button", "click", "Failed" });
+			TestNGResults.put("6", new Object[] { 6d, "Click login button", "click", "Failed" });
 			AssertJUnit.assertTrue(false);
 		}
 	}
 	
 	
 	
+	
+
+
 }
