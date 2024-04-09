@@ -1,77 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-08T22:01:50 ICT" name="TestOpenWeb" finished-at="2024-04-08T22:03:12 ICT" duration-ms="81309">
+  <suite started-at="2024-04-09T09:18:32 ICT" name="Default suite" finished-at="2024-04-09T09:20:02 ICT" duration-ms="89670">
     <groups>
     </groups>
-    <test started-at="2024-04-08T22:01:50 ICT" name="TestOpenWeb" finished-at="2024-04-08T22:03:12 ICT" duration-ms="81309">
+    <test started-at="2024-04-09T09:18:32 ICT" name="Default test" finished-at="2024-04-09T09:20:02 ICT" duration-ms="89670">
       <class name="com.asm2_ktnc.NewTest2">
-        <test-method is-config="true" signature="suiteSetup()[pri:0, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:01:50 ICT" name="suiteSetup" finished-at="2024-04-08T22:01:52 ICT" duration-ms="1797" status="PASS">
+        <test-method is-config="true" signature="suiteSetup()[pri:0, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:18:32 ICT" name="suiteSetup" finished-at="2024-04-09T09:18:34 ICT" duration-ms="1862" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteSetup -->
-        <test-method signature="openGmail()[pri:1, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:01:52 ICT" name="openGmail" description="Open Gmail" finished-at="2024-04-08T22:02:03 ICT" duration-ms="10692" status="PASS">
+        <test-method signature="openGmail()[pri:1, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:18:34 ICT" name="openGmail" description="Open Gmail" finished-at="2024-04-09T09:18:42 ICT" duration-ms="8324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openGmail -->
-        <test-method signature="fillUsername()[pri:2, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:02:03 ICT" name="fillUsername" description="Fill username" finished-at="2024-04-08T22:02:07 ICT" duration-ms="3803" status="PASS">
+        <test-method signature="fillUsername()[pri:2, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:18:42 ICT" name="fillUsername" description="Fill username" finished-at="2024-04-09T09:18:46 ICT" duration-ms="3347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillUsername -->
-        <test-method signature="fillPass()[pri:3, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:02:07 ICT" name="fillPass" description="Fill pass" finished-at="2024-04-08T22:02:10 ICT" duration-ms="3208" status="PASS">
+        <test-method signature="fillPass()[pri:3, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:18:46 ICT" name="fillPass" description="Fill pass" finished-at="2024-04-09T09:18:49 ICT" duration-ms="3453" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fillPass -->
-        <test-method signature="openAP()[pri:4, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:02:10 ICT" name="openAP" description="openAP" finished-at="2024-04-08T22:03:12 ICT" duration-ms="61677" status="PASS">
+        <test-method signature="openAP()[pri:4, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:18:49 ICT" name="openAP" description="open chrome extension" finished-at="2024-04-09T09:19:33 ICT" duration-ms="44131" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAP -->
-        <test-method signature="clickLogin()[pri:5, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:03:12 ICT" name="clickLogin" description="Click login by mail fpt" finished-at="2024-04-08T22:03:12 ICT" duration-ms="7" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 
-at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-at com.asm2_ktnc.NewTest2.clickLogin(NewTest2.java:217)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="clickLogin()[pri:5, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:19:33 ICT" name="clickLogin" description="open ap and Click login by mail fpt" finished-at="2024-04-09T09:20:02 ICT" duration-ms="28436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickLogin -->
-        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:com.asm2_ktnc.NewTest2@c730b35]" started-at="2024-04-08T22:03:12 ICT" name="suiteTearDown" finished-at="2024-04-08T22:03:12 ICT" duration-ms="78" status="PASS">
+        <test-method is-config="true" signature="suiteTearDown()[pri:0, instance:com.asm2_ktnc.NewTest2@2d1ef81a]" started-at="2024-04-09T09:20:02 ICT" name="suiteTearDown" finished-at="2024-04-09T09:20:02 ICT" duration-ms="65" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suiteTearDown -->
       </class> <!-- com.asm2_ktnc.NewTest2 -->
-    </test> <!-- TestOpenWeb -->
-  </suite> <!-- TestOpenWeb -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
